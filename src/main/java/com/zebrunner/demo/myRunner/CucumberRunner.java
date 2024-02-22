@@ -1,5 +1,7 @@
 package com.zebrunner.demo.myRunner;
 
+import com.zebrunner.agent.core.annotation.Maintainer;
+import com.zebrunner.agent.core.annotation.ZephyrTestCaseKey;
 import com.zebrunner.agent.testng.core.testname.TestNameResolverRegistry;
 import com.zebrunner.demo.CucumberNameResolver;
 import io.cucumber.testng.*;
@@ -25,7 +27,9 @@ public abstract class CucumberRunner extends AbstractTestNGCucumberTests {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass(), properties);
     }
 
-    @Test(groups = { "cucumber" }, description = "Runs Cucumber Feature", dataProvider = "features")
+    @Maintainer("obabich")
+    @ZephyrTestCaseKey({"ZEB-53", "ZEB-52", "ZEB-54"})
+    @Test(groups = {"cucumber"}, description = "Runs Cucumber Feature", dataProvider = "features")
     public void feature(PickleWrapper pickleWrapper, FeatureWrapper featureWrapper, @SuppressWarnings("unused") String uniqueId) {
 
         CucumberNameResolver.generateTestName(pickleWrapper, featureWrapper, this.testNGCucumberRunner.provideScenarios().length);

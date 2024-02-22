@@ -1,12 +1,5 @@
 Feature: Documentation
 
-  Scenario: Zebrunner TestNG reporting agent
-    Given user is on Documentation page
-    When select Reporting concepts
-    Then select Java
-    Then select TestNG
-    Then verify page title
-
   Scenario: Zebrunner User Guide
     Given user is on Documentation page
     When select Core concepts
@@ -30,4 +23,11 @@ Feature: Documentation
     Given user is on Documentation page
     When select Administration
     Then select Onboarding
+
+  Scenario: Zebrunner TestNG reporting agent
+    Given user is on Documentation page
+    When select Reporting concepts
+    Then select Java
+    Then select TestNG
+    Then verify page title
 

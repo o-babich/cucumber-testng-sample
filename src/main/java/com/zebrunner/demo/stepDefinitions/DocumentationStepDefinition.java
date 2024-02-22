@@ -12,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 
+import java.util.Random;
+
 @Slf4j
 public class DocumentationStepDefinition {
 
@@ -127,6 +129,7 @@ public class DocumentationStepDefinition {
         Thread.sleep(1000);
 
         DriverManager.takeScreenshot();
+        Assert.assertTrue(new Random().nextBoolean(), "Oops, something went wrong!");
     }
 
     @SneakyThrows
@@ -172,6 +175,7 @@ public class DocumentationStepDefinition {
         Thread.sleep(1000);
 
         DriverManager.takeScreenshot();
+        Assert.assertTrue(new Random().nextBoolean(), "Oops, something went wrong!");
     }
 
     @SneakyThrows
@@ -216,6 +220,7 @@ public class DocumentationStepDefinition {
         Thread.sleep(1000);
 
         DriverManager.takeScreenshot();
+        Assert.assertTrue(new Random().nextBoolean(), "Oops, something went wrong!");
     }
 
     @SneakyThrows
@@ -254,5 +259,6 @@ public class DocumentationStepDefinition {
         el.click();
         Thread.sleep(1000);
         DriverManager.takeScreenshot();
+        Assert.assertTrue(new Random().nextBoolean(), "Oops, something went wrong!");
     }
 }
